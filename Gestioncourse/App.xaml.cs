@@ -11,6 +11,7 @@ namespace Gestioncourse
     {
         //Liste contenant les objets de la class model Course.cs
         public static List<Course> ListCourses { get; set; }
+        public static List<Coureur> ListCoureurs { get; set; }
         public App()
         {
             InitializeComponent();
@@ -18,16 +19,21 @@ namespace Gestioncourse
             //Verifie l'existance de la course
             if (ListCourses == null)
                 ListCourses = new List<Course>();
+            if (ListCoureurs == null)
+                ListCoureurs = new List<Coureur>();
 
             InitListCourse();
 
             //demarrage de la vue concerné 
             MainPage = new ListeCourses();
+
+
         }
         private static void InitListCourse()
         {
             // Ajout d'un objet course dans la listCourses en utilisatn le constructeur par default
             ListCourses.Add(new Course { IdCourse = 0, Nom = "Lieu 1", Date = "12/12/2012", Distance = 30, HeureDepart = "12h30" });
+
         }
 
 

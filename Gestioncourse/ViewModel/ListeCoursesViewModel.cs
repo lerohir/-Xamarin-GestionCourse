@@ -36,5 +36,11 @@ namespace Gestioncourse.ViewModel
             Navigation.PushModalAsync(new AddCoureur());
             //Navigation.PopModalAsync(new AddCoureur());
         }
+
+        public void AfficherView_RemplirCourse(object obj)
+        {
+            //Afficher la vue 
+
+        }
     }
 }

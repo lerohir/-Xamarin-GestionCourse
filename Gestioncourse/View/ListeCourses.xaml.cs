@@ -17,5 +17,10 @@ namespace Gestioncourse.View
             InitializeComponent();
             BindingContext = new ListeCoursesViewModel(Navigation);
         }
+
+        private void lstCourses_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            ((ListeCoursesViewModel)BindingContext).AfficherView_RemplirCourse();
+        }
     }
 }

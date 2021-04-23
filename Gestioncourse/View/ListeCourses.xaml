@@ -35,7 +35,7 @@
                 <Label Text="HeureDepart" Grid.Column="4" HorizontalTextAlignment="Center"/>
 
             </Grid>
-            <ListView x:Name="lstCourses" ItemsSource="{Binding Courses}">
+            <ListView x:Name="lstCourses" ItemsSource="{Binding Courses}" ItemTapped="lstCourses_ItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

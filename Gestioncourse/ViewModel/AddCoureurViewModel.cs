@@ -10,6 +10,8 @@ namespace Gestioncourse.ViewModel
     public class AddCoureurViewModel : BindableObject
     {
         private Coureur _coureur;
+        
+
         public Coureur Coureur { get => _coureur; set { _coureur = value; OnPropertyChanged(); } }
 
         public Command Retour { get; set; }
@@ -25,7 +27,7 @@ namespace Gestioncourse.ViewModel
 
         private void AjouterConfigurationAction(object obj)
         {
-            
+            App.ListCoureurs.Add(Coureur);
         }
 
         private void RetourAction(object obj)
