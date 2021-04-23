@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Gestioncourse.View.ListeCourses">
+  <ContentPage.Content>
+        <StackLayout>
+            <Frame>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <ImageButton Source="standinghuman.png" Grid.Column="0" Command="{Binding ActionNavigation}" HeightRequest="50" WidthRequest="50" CornerRadius="30" HorizontalOptions="End"/>
+                    <!--<ImageButton Source="standinghuman.png" Grid.Column="1" HeightRequest="50" WidthRequest="50" CornerRadius="30" HorizontalOptions="End"/>-->
+                </Grid>
+            </Frame>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Id Course" Grid.Column="0" HorizontalTextAlignment="Center"/>
+                <Label Text="Nom" Grid.Column="1" HorizontalTextAlignment="Center"/>
+                <Label Text="Date" Grid.Column="2" HorizontalTextAlignment="Center"/>
+                <Label Text="Distance" Grid.Column="3" HorizontalTextAlignment="Center"/>
+                <Label Text="HeureDepart" Grid.Column="4" HorizontalTextAlignment="Center"/>
+
+            </Grid>
+            <ListView x:Name="lstCourses" ItemsSource="{Binding Courses}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding IdCourse}" Grid.Row="1" Grid.Column="0" HorizontalTextAlignment="Center"/>
+                                <Label Text="{Binding Nom}" Grid.Row="1" Grid.Column="1" HorizontalTextAlignment="Center"/>
+                                <Label Text="{Binding Date}" Grid.Row="1" Grid.Column="2" HorizontalTextAlignment="Center"/>
+                                <Label Text="{Binding Distance}" Grid.Row="1" Grid.Column="3" HorizontalTextAlignment="Center"/>
+                                <Label Text="{Binding HeureDepart}" Grid.Row="1" Grid.Column="4" HorizontalTextAlignment="Center"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView> 
+
+        </StackLayout>
+           
+  </ContentPage.Content>
+</ContentPage>
