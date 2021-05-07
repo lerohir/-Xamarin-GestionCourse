@@ -33,7 +33,6 @@
                 <Label Text="Date" Grid.Column="2" HorizontalTextAlignment="Center"/>
                 <Label Text="Distance" Grid.Column="3" HorizontalTextAlignment="Center"/>
                 <Label Text="HeureDepart" Grid.Column="4" HorizontalTextAlignment="Center"/>
-
             </Grid>
             <ListView x:Name="lstCourses" ItemsSource="{Binding Courses}" ItemTapped="lstCourses_ItemTapped">
                 <ListView.ItemTemplate>

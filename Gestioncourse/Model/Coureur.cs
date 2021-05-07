@@ -7,6 +7,7 @@ namespace Gestioncourse.Model
 
     public class Coureur
     {
+        private int _idCoureur;
         private string _prenom;
         private string _nom;
         private string _age;
@@ -22,5 +23,6 @@ namespace Gestioncourse.Model
         public string Adr { get => _adr; set => _adr = value; }
         public string CodePostal { get => _codePostal; set => _codePostal = value; }
         public string Ville { get => _ville; set => _ville = value; }
+        public int IdCoureur { get => _idCoureur; set => _idCoureur = value; }
     }
 }

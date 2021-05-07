@@ -1,10 +1,68 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Gestioncourse.View.RemplirCourse">
-  <ContentView.Content>
+    <ContentPage.Content>
       <StackLayout>
-          <Label Text="Hello Xamarin.Forms!" />
+            <Frame Margin="0,20,0,0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions >
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Text="{Binding NomCourse}" Grid.Column="0" Grid.Row="0" HorizontalTextAlignment="Center" Margin="0,0,0,20"/>
+                    <Label Text="{Binding DistanceCourse}" Grid.Column="1" Grid.Row="0" HorizontalTextAlignment="Center" Margin="0,0,0,20"/>
+                    <Label Text="{Binding DateCourse}" Grid.Column="0" Grid.Row="1" HorizontalTextAlignment="Center"/>
+                    <Label Text="{Binding HeureDepartCourse}" Grid.Column="1" Grid.Row="1" HorizontalTextAlignment="Center"/>
+                </Grid>
+            </Frame>
+            <Frame>
+                <ListView ItemsSource="{Binding CoureursParticipants}" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="{Binding Nom}" Grid.Row="1" Grid.Column="0" HorizontalTextAlignment="Center"/>
+                                    <Label Text="{Binding Prenom}" Grid.Row="1" Grid.Column="1" HorizontalTextAlignment="Center"/>
+                                    <Label Text="{Binding Age}" Grid.Row="1" Grid.Column="2" HorizontalTextAlignment="Center"/>
+                                    <Label Text="{Binding Sexe}" Grid.Row="1" Grid.Column="3" HorizontalTextAlignment="Center"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Frame>
+            <Frame HeightRequest="200">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Picker ItemsSource="{Binding ListCoureurs}" ItemDisplayBinding="{Binding Nom}" SelectedIndex="{Binding SelectCoureur}" Grid.Column="0" Grid.Row="0"/>
+                    <Button Command="{Binding AjoutCoureur}" Text="Ajouter" Grid.Column="1" Grid.Row="0"/>
+                    <Button Command="{Binding Retour}" Text="Retour" Grid.Column="1" Grid.Row="1"/>
+                </Grid>
+                
+            </Frame>
+            
       </StackLayout>
-  </ContentView.Content>
-</ContentView>
+  </ContentPage.Content>
+</ContentPage>

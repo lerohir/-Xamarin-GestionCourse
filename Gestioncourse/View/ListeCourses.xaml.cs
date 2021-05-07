@@ -1,4 +1,5 @@
-﻿using Gestioncourse.ViewModel;
+﻿using Gestioncourse.Model;
+using Gestioncourse.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +21,10 @@ namespace Gestioncourse.View
 
         private void lstCourses_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            ((ListeCoursesViewModel)BindingContext).AfficherView_RemplirCourse();
+            
+            ((ListeCoursesViewModel)BindingContext).AfficherView_RemplirCourse((Course)e.Item);
+
+            //(Course).e.Item ==> Récupère le l'item de E qui est casté en obj Course. 
         }
     }
 }
